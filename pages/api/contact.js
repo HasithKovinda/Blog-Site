@@ -8,7 +8,7 @@ export default async function handler(req,res){
         }
         let client
         try {
-          client= await  MongoClient.connect('mongodb+srv://hasith300:8GzAgYBqbj66YFT4@cluster0.pifnecs.mongodb.net/?retryWrites=true&w=majority')
+          client= await  MongoClient.connect(process.env.DB_URL)
         } catch (error) {
             console.log(error)
             return res.status(500).json({message:'Something went wrong'})

@@ -18,22 +18,13 @@ function PostContent({post}) {
      const {src,alt} =image
      return <Image src={`/images/posts/${slug}/${src}`} alt={alt} height={300} width={600}/>
     },
-    code({ node, inline, className, children, ...props }) {
-      const match = /language-(\w+)/.exec(className || '');
-      return !inline && match ? (
-        <SyntaxHighlighter
-          children={String(children).replace(/\n$/, '')}
-          style={darcula}
-          language={match[1]}
-          PreTag="div"
-          {...props}
-        />
-      ) : (
-        <code className={className} {...props}>
-          {children}
-        </code>
+    code(code) {
+      return (
+        <SyntaxHighlighter language='javascript' style={darcula}>
+          {code.children}
+        </SyntaxHighlighter>
       );
-    },
+},
    } 
    SyntaxHighlighter.registerLanguage('javascript', js);
    SyntaxHighlighter.registerLanguage('css', css);

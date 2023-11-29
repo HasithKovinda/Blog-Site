@@ -6,7 +6,7 @@ isFeatured: false
 date: '2021-10-30'
 ---
 
-JavaScript powers the web - it's **the** most important programming language you need to know as a web developer.
+JavaScript powers the web - it&apos;s **the** most important programming language you need to know as a web developer.
 
 For example, you should understand code like this:
 
